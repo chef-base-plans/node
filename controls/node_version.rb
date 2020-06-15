@@ -22,7 +22,7 @@ control 'base-plans-node-version' do
 
     # Ensure the version is set correctly by looking at the version of nginx
     # and comparing with element 5 in the path to the ident
-    describe command("#{nginx_pkg_ident}/bin/node --version") do
+    describe command("#{node_pkg_ident}/bin/node --version") do
         its('exit_status') { should eq 0 }
         its('stderr') { should_not be_empty }
         its('stderr') { should match /v#{node_pkg_ident.split("/")[5]}/ }
