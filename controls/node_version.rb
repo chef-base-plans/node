@@ -20,7 +20,7 @@ control 'base-plans-node-version' do
     # Get the ident from the command
     node_pkg_ident = cmd_to_get_ident.stdout.strip
 
-    # Ensure the version is set correctly by looking at the version of nginx
+    # Ensure the version is set correctly by looking at the version of node
     # and comparing with element 5 in the path to the ident
     describe command("#{node_pkg_ident}/bin/node --version") do
         its('exit_status') { should eq 0 }
