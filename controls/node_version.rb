@@ -18,14 +18,14 @@ control 'base-plans-node-version' do
     end
 
     # Get the ident from the command
-    nginx_pkg_ident = cmd_to_get_ident.stdout.strip
+    node_pkg_ident = cmd_to_get_ident.stdout.strip
 
     # Ensure the version is set correctly by looking at the version of nginx
     # and comparing with element 5 in the path to the ident
-    describe command("#{nginx_pkg_ident}/bin/nginx -v") do
+    describe command("#{nginx_pkg_ident}/bin/node --version") do
         its('exit_status') { should eq 0 }
         its('stderr') { should_not be_empty }
-        its('stderr') { should match /nginx version: nginx\/#{nginx_pkg_ident.split("/")[5]}/ }
+        its('stderr') { should match /v#{node_pkg_ident.split("/")[5]}/ }
         its('stdout') { should be_empty }
     end
 end
