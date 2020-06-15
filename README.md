@@ -1,2 +1,15 @@
-# base-plan-skeleton
-Template for all new Chef Base Plans to simplify creation of repositories.
+# node
+
+Node.js® is a JavaScript runtime built on Chrome's V8 JavaScript engine.
+
+## Maintainers
+
+* The Habitat Maintainers: <humans@habitat.sh>
+
+## Type of Package
+
+Binary package
+
+## Usage
+
+*TODO: Add instructions for usage*
