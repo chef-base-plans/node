@@ -24,8 +24,8 @@ control 'base-plans-node-version' do
     # and comparing with element 5 in the path to the ident
     describe command("#{node_pkg_ident}/bin/node --version") do
         its('exit_status') { should eq 0 }
-        its('stderr') { should_not be_empty }
-        its('stderr') { should match /v#{node_pkg_ident.split("/")[5]}/ }
-        its('stdout') { should be_empty }
+        its('stdout') { should_not be_empty }
+        its('stdout') { should match /v#{node_pkg_ident.split("/")[5]}/ }
+        its('stderr') { should be_empty }
     end
 end
