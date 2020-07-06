@@ -7,12 +7,11 @@ control 'core-plans-node-works' do
   impact 1.0
   title 'Ensure node works as expected'
   desc '
-  Verify node by ensuring that
-  (1) its installation directory exists 
-  (2) it returns the expected version
+  Verify node by ensuring that its
+  (1) installation directory exists 
+  (2) binaries return the expected version
   '
   
-  hab_path = input('hab_path', value: 'hab')
   plan_installation_directory = command("hab pkg path #{plan_origin}/#{plan_name}")
   describe plan_installation_directory do
     its('exit_status') { should eq 0 }
