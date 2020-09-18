@@ -15,4 +15,4 @@ resources:
 
 # Execute the stages from the main pipeline template
 stages:
-  - template: azure-pipelines.yml@plan_builder
+  - template: azure-pipelines-package-install.yml@plan_builder
