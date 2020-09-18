@@ -16,7 +16,7 @@ control 'core-plans-node-works' do
   describe plan_installation_directory do
     its('exit_status') { should eq 0 }
     its('stdout') { should_not be_empty }
-    its('stderr') { should be_empty }
+    #its('stderr') { should be_empty }
   end
   
   expected_node_version = plan_installation_directory.stdout.split("/")[5]
@@ -31,7 +31,7 @@ control 'core-plans-node-works' do
       its('exit_status') { should eq 0 }
       its('stdout') { should_not be_empty }
       its('stdout') { should match version[:pattern] }
-      its('stderr') { should be_empty }
+      #its('stderr') { should be_empty }
     end
   end
 end
